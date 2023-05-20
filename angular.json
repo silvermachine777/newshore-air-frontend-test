@@ -24,6 +24,7 @@
               "src/assets"
             ],
             "styles": [
+              "src/custom-theme.scss",
               "src/styles.css"
             ],
             "scripts": []
@@ -119,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "newshore-air"
+    }
+  },
+  "defaultProject": "newshore-air",
+  "cli": {
+    "analytics": "deb6d9e5-2f51-471f-b071-25b18948ca25"
+  }
 }
