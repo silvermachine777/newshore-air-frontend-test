@@ -7,7 +7,7 @@ import { Flight } from '../models/flight.model';
   providedIn: 'root'
 })
 export class FlightService {
-  private apiUrl = 'https://recruiting-api.newshore.es/api/flights';
+  private apiUrl = 'https://recruiting-api.newshore.es/api/flights/0';
 
   constructor(private http: HttpClient) { }
 
