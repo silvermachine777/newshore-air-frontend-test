@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
+import { FlightService } from './../../services/flight.service';
+import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-search-form',
@@ -9,7 +12,7 @@ import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms'
 export class SearchFormComponent implements OnInit {
   formGroup!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { }
+constructor(private formBuilder: FormBuilder, private flightService: FlightService) { }
 
   ngOnInit(): void {
     this.buildForm();
@@ -48,7 +51,20 @@ export class SearchFormComponent implements OnInit {
   }
 
   submitForm(): void {
-    console.log(this.formGroup.value);
+    if (this.formGroup.valid) {
+      const origin = this.formGroup.get('origin')?.value;
+      const destination = this.formGroup.get('destination')?.value;
+    
+      this.flightService.getFlights().subscribe(
+        (flights) => {
+          console.log('Flights:', flights);
+        },
+        (error) => {
+          console.error('Error getting flights:', error);
+        }
+      );
+    }
   }
+  
 
 }
