@@ -8,6 +8,7 @@ import {
 import { FlightService } from './../../services/flight.service';
 import { HttpClient } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Flight } from 'src/app/models/flight.model';
 
 @Component({
   selector: 'app-search-form',
@@ -16,6 +17,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class SearchFormComponent implements OnInit {
   formGroup!: FormGroup;
+
+  fligths: Flight[] = [];
 
   constructor(
     private formBuilder: FormBuilder,
@@ -79,29 +82,28 @@ export class SearchFormComponent implements OnInit {
 
     const origin = this.formGroup.get('origin')?.value;
     const destination = this.formGroup.get('destination')?.value;
-  
+
     if (origin === destination) {
       this.snackBar.open('Fields may not contain the same value', 'Close', {
         duration: 3000,
       });
       return;
     }
-  
+
     if (origin.length !== 3 || destination.length !== 3) {
-      this.snackBar.open('Please, enter correctly the fields', 'Close', {
+      this.snackBar.open('You must enter a value', 'Close', {
         duration: 3000,
       });
       return;
     }
-  
+
     this.flightService.getFlights().subscribe(
       (flights) => {
-        console.log('Flights:', flights);
+        this.fligths = flights;
       },
       (error) => {
         console.error('Error getting flights:', error);
       }
     );
   }
-  
 }
