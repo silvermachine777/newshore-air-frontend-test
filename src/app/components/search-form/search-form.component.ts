@@ -71,7 +71,7 @@ export class SearchFormComponent implements OnInit {
 
   submitForm(): void {
     if (this.formGroup.invalid) {
-      this.snackBar.open('Por favor, complete todos los campos obligatorios', 'Cerrar', {
+      this.snackBar.open('Please, complete all required fields', 'Close', {
         duration: 3000,
       });
       return;
@@ -81,14 +81,14 @@ export class SearchFormComponent implements OnInit {
     const destination = this.formGroup.get('destination')?.value;
   
     if (origin === destination) {
-      this.snackBar.open('Los campos no pueden contener el mismo valor', 'Cerrar', {
+      this.snackBar.open('Fields may not contain the same value', 'Close', {
         duration: 3000,
       });
       return;
     }
   
     if (origin.length !== 3 || destination.length !== 3) {
-      this.snackBar.open('Por favor, ingrese correctamente los campos', 'Cerrar', {
+      this.snackBar.open('Please, enter correctly the fields', 'Close', {
         duration: 3000,
       });
       return;
