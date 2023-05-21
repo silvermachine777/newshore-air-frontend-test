@@ -1,0 +1,22 @@
+<form [formGroup]="formGroup" (ngSubmit)="submitForm()">
+    <mat-form-field appearance="fill">
+        <mat-label>Origin</mat-label>
+        <input matInput formControlName="origin" placeholder="Origin" (keypress)="limitLength($event, 3)">
+        <mat-error
+            *ngIf="formGroup.get('origin')?.invalid && (formGroup.get('origin')?.dirty || formGroup.get('origin')?.touched)">
+            El campo Origin debe tener exactamente 3 caracteres.
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Destination</mat-label>
+        <input matInput formControlName="destination" placeholder="Destination" (keypress)="limitLength($event, 3)">
+        <mat-error
+            *ngIf="formGroup.get('destination')?.invalid && (formGroup.get('destination')?.dirty || formGroup.get('destination')?.touched)">
+            El campo Destination debe tener exactamente 3 caracteres.
+        </mat-error>
+    </mat-form-field>
+
+    <button mat-button color="primary">Search</button>
+
+</form>
