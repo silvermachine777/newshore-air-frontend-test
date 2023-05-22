@@ -15,9 +15,7 @@ export class ShowRouteComponent implements OnInit, OnChanges {
 
   constructor() { }
 
-  ngOnInit(): void {
-    console.log("Show route flights: ", this.flights)
-  }
+  ngOnInit(): void { }
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.flights && this.flights) {
