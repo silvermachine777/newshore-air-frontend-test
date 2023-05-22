@@ -22,4 +22,4 @@
     </form>
 </section>
 
-<app-show-route [flights]="fligths" *ngIf="fligths && fligths.length > 0"></app-show-route>
+<app-show-route [origin]="formGroup.get('origin')?.value" [destination]="formGroup.get('destination')?.value" [flights]="fligths" *ngIf="fligths && fligths.length > 0"></app-show-route>
