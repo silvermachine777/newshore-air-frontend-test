@@ -9,6 +9,9 @@ import { Flight } from 'src/app/models/flight.model';
 export class ShowRouteComponent implements OnInit, OnChanges {
 
   @Input() flights: Flight[];
+  @Input() origin: string;
+  @Input() destination: string;
+  matchingFlights: Flight[] = [];
 
   constructor() { }
 
@@ -17,8 +20,18 @@ export class ShowRouteComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log("Show route flights: ", this.flights)
-    
+    if (changes.flights && this.flights) {
+      this.searchMatchingFlights();
+    }    
+  }
+
+  searchMatchingFlights(): void {
+    this.matchingFlights = this.flights.filter((flight) => {
+      return (
+        flight['departureStation'] === this.origin &&
+        flight['arrivalStation'] === this.destination
+      );
+    });
   }
 
 }

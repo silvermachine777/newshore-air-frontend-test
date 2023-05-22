@@ -1,1 +1,17 @@
-<h1>Show route</h1>
+<section class="route-card-container" *ngIf="matchingFlights.length > 0">
+    <h1>Unique route</h1>
+    <mat-card class="route-card">
+        <mat-card-header>
+            <mat-card-title *ngFor="let flight of matchingFlights">{{ flight.departureStation }} - {{ flight.arrivalStation }}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="./../../../assets/img/banner-flight.webp" alt="Photo of a Shiba Inu">
+        <mat-card-subtitle *ngFor="let flight of matchingFlights"><span class="card-subtitle"> Flight Carrier: </span> {{ flight.flightCarrier }}</mat-card-subtitle>
+        <mat-card-subtitle *ngFor="let flight of matchingFlights"><span class="card-subtitle"> Flight Number: </span> {{ flight.flightNumber }}</mat-card-subtitle>
+        <mat-card-subtitle *ngFor="let flight of matchingFlights"><span class="card-subtitle"> Price: </span> {{ flight.price }}</mat-card-subtitle>
+    </mat-card>
+</section>
+
+<div *ngIf="matchingFlights.length === 0">
+    <h1>Your request cannot be processed</h1>
+</div>
+
