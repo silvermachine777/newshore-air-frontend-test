@@ -1,7 +1,25 @@
+section.route-card-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
 .route-card {
     max-width: 400px;
 }
 
 span.card-subtitle {
-    font-weight: bold;
+    font-weight: 400;
+    font-size: 16px;
+    color: black;
+}
+
+.plane-icon {
+    background-image: url('./../../../assets/img/plane-svg.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
