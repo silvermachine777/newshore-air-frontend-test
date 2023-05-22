@@ -1,25 +1,31 @@
-<section class="search-form-container">
-    <form [formGroup]="formGroup">
-        <mat-form-field appearance="outline">
-            <mat-label>Origin</mat-label>
-            <input matInput class="search-form-input" formControlName="origin" placeholder="Origin" (keypress)="limitLength($event, 3)">
-            <mat-error
-                *ngIf="formGroup.get('origin')?.invalid && (formGroup.get('origin')?.dirty || formGroup.get('origin')?.touched)">
-                The Origin field must be exactly 3 characters
-            </mat-error>
-        </mat-form-field>
+<div class="wrapper-container">
+    <h1>Book a flight</h1>
+    <section class="search-form">
+        <form [formGroup]="formGroup">
+            <mat-form-field appearance="outline">
+                <mat-label>Origin</mat-label>
+                <input matInput class="search-form-input" formControlName="origin" placeholder="Origin"
+                    (keypress)="limitLength($event, 3)">
+                <mat-error class="error-message"
+                    *ngIf="formGroup.get('origin')?.invalid && (formGroup.get('origin')?.dirty || formGroup.get('origin')?.touched)">
+                    The Origin field must be exactly 3 characters
+                </mat-error>
+            </mat-form-field>
 
-        <mat-form-field appearance="outline">
-            <mat-label>Destination</mat-label>
-            <input matInput class="search-form-input" formControlName="destination" placeholder="Destination" (keypress)="limitLength($event, 3)">
-            <mat-error
-                *ngIf="formGroup.get('destination')?.invalid && (formGroup.get('destination')?.dirty || formGroup.get('destination')?.touched)">
-                The Destination field must be exactly 3 characters
-            </mat-error>
-        </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Destination</mat-label>
+                <input matInput class="search-form-input" formControlName="destination" placeholder="Destination"
+                    (keypress)="limitLength($event, 3)">
+                <mat-error class="error-message"
+                    *ngIf="formGroup.get('destination')?.invalid && (formGroup.get('destination')?.dirty || formGroup.get('destination')?.touched)">
+                    The Destination field must be exactly 3 characters
+                </mat-error>
+            </mat-form-field>
 
-        <button mat-button class="search-form-button" color="primary" (click)="submitForm()">Search</button>
-    </form>
-</section>
+            <button mat-button class="search-form-button" color="primary" (click)="submitForm()">Search</button>
+        </form>
+    </section>
+</div>
 
-<app-show-route [origin]="formGroup.get('origin')?.value" [destination]="formGroup.get('destination')?.value" [flights]="fligths" *ngIf="fligths && fligths.length > 0"></app-show-route>
+<app-show-route [origin]="formGroup.get('origin')?.value" [destination]="formGroup.get('destination')?.value"
+    [flights]="fligths" *ngIf="fligths && fligths.length > 0"></app-show-route>

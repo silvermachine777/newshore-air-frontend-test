@@ -1,4 +1,13 @@
-.search-form-container{
+.wrapper-container {
+    background-image: url('./../../../assets/img/banner-flight.webp');
+    padding: 4rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 5rem;
+}
+ 
+.search-form{
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -6,9 +15,8 @@
     margin: 0 auto;
     max-width: 600px;
     padding: 3rem;
-    background: #fc0;
-    border-radius: 17px;
-}
+    background: white;
+} 
   
 .mat-form-field {
     margin-right: 2px;
@@ -22,4 +30,43 @@
 
 .search-form-button:hover{
     background-color: #1f1d1d;
+}
+
+.wrapper-container h1 {
+    text-align: center;
+    font-size: 40px;
+    color: white;
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+@media screen and (max-width: 900px) {
+    .search-form-button{
+        margin: 6px 0px;
+        width: 100%;
+    }
+
+    .mat-form-field {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .wrapper-container {
+        margin: 0;
+    }
+
+    .search-form::ng-deep .mat-form-field-subscript-wrapper {
+        font-size: 64%;
+        margin-top: 0;
+    }
+
+    .search-form-button{
+        margin: 6px 0px;
+        width: 100%;
+    }
+
+    .mat-form-field {
+        width: 100%;
+    }
 }
