@@ -12,7 +12,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatButtonModule } from '@angular/material/button';
 import { ShowRouteComponent } from './components/show-route/show-route.component';
-
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,8 @@ import { ShowRouteComponent } from './components/show-route/show-route.component
     MatInputModule,
     HttpClientModule,
     MatSnackBarModule,
-    MatButtonModule
+    MatButtonModule,
+    MatCardModule
   ],
   providers: [FlightService],
   bootstrap: [AppComponent]
