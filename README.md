@@ -1,27 +1,38 @@
 # NewshoreAir
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.15.
+Welcome to Newshore Air frontend test by Newshore. This is a web aplication for book flights with simple routes.
 
-## Development server
+# Preview
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+![preview of application](https://raw.githubusercontent.com/silvermachine777/newshore-air-frontend-test/main/src/assets/img/Preview.png)
 
-## Code scaffolding
+## Features
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Search form and show route components
+- Flight and currency services for the http requests
+- Class modeling with POO
+- Change currency: USD, COP, EUR
 
-## Build
+## Main technologies
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+- [Angular CLI](https://github.com/angular/angular-cli) version 9.1.15.
+- Node version v12.22.12
+- Conventional commits https://www.conventionalcommits.org/en/v1.0.0/
+- CSS3
 
-## Running unit tests
+## Other technologies / Libraries
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Angular Material https://v9.material.angular.io/ 
 
-## Running end-to-end tests
+## Configuration of project and development server
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+- Download de repository
+- Validate node version if necessary use nvm to install the right version https://github.com/nvm-sh/nvm
+- Execute npm install
+- Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
