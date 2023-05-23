@@ -61,7 +61,6 @@ export class ShowRouteComponent implements OnInit, OnChanges {
 
   selectCurrency(currency: string): void {
     this.selectedCurrency = currency;
-    console.log(this.selectedCurrency)
     this.convertPrice();
   }
 
