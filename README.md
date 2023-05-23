@@ -8,7 +8,8 @@ Welcome to Newshore Air frontend test by Newshore. This is a web aplication for 
 
 ## Features
 
-- Search form and show route components
+- Search form component
+- Show route component
 - Flight and currency services for the http requests
 - Class modeling with POO
 - Change currency: USD, COP, EUR
@@ -24,10 +25,10 @@ Welcome to Newshore Air frontend test by Newshore. This is a web aplication for 
 
 - Angular Material https://v9.material.angular.io/ 
 
-## Configuration of project and development server
+## Project and development server
 
-- Download de repository
-- Validate node version if necessary use nvm to install the right version https://github.com/nvm-sh/nvm
+- Download of the repository
+- If necessary, validate your nodejs version and use nvm to install the right version https://github.com/nvm-sh/nvm
 - Execute npm install
 - Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
