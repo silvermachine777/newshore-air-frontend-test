@@ -4,7 +4,7 @@
             <div mat-card-avatar class="plane-icon"></div>
             <mat-card-title *ngFor="let flight of matchingFlights">{{ flight.departureStation }} - {{
                 flight.arrivalStation }}</mat-card-title>
-                <mat-card-subtitle>Unique Route</mat-card-subtitle>
+            <mat-card-subtitle>Unique Route</mat-card-subtitle>
         </mat-card-header>
         <hr>
         <mat-card-content>
@@ -12,8 +12,17 @@
                 </span> {{ flight.flightCarrier }}</mat-card-subtitle>
             <mat-card-subtitle *ngFor="let flight of matchingFlights"><span class="card-subtitle"> Flight Number:
                 </span> {{ flight.flightNumber }}</mat-card-subtitle>
-            <mat-card-subtitle *ngFor="let flight of matchingFlights"><span class="card-subtitle"> Price: </span> {{
-                flight.price }}</mat-card-subtitle>
+            <mat-form-field>
+                <mat-label>Select Currency</mat-label>
+                <mat-select [(ngModel)]="selectedCurrency" (selectionChange)="selectCurrency($event.value)">
+                    <mat-option value="USD">USD</mat-option>
+                    <mat-option value="COP">COP</mat-option>
+                    <mat-option value="EUR">EUR</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-card-subtitle *ngFor="let flight of matchingFlights"><span class="card-subtitle">
+                 Price: </span> {{ convertedPrice | currency:selectedCurrency }}
+            </mat-card-subtitle>
         </mat-card-content>
     </mat-card>
 </section>
