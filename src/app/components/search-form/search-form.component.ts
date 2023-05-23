@@ -6,7 +6,6 @@ import {
   FormControl,
 } from '@angular/forms';
 import { FlightService } from './../../services/flight.service';
-import { HttpClient } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Flight } from 'src/app/models/flight.model';
 
@@ -21,7 +20,6 @@ export class SearchFormComponent implements OnInit {
   fligths: Flight[] = [];
 
   constructor(
-    private formBuilder: FormBuilder,
     private flightService: FlightService,
     private snackBar: MatSnackBar
   ) {}
