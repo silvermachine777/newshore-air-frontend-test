@@ -21,12 +21,12 @@
                 </mat-select>
             </mat-form-field>
             <mat-card-subtitle *ngFor="let flight of matchingFlights"><span class="card-subtitle">
-                 Price: </span> {{ convertedPrice | currency:selectedCurrency }}
+                    Price: </span> {{ convertedPrice | currency:selectedCurrency }}
             </mat-card-subtitle>
         </mat-card-content>
     </mat-card>
 </section>
 
-<div *ngIf="matchingFlights.length === 0">
-    <h1>Your request cannot be processed</h1>
-</div>
+<mat-card *ngIf="matchingFlights.length === 0" class="request-message" tabindex="1">
+    Your request cannot be processed. Enter a correct flight route
+</mat-card>

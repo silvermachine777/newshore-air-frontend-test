@@ -23,3 +23,15 @@ span.card-subtitle {
     background-repeat: no-repeat;
     background-size: contain;
 }
+
+.request-message {
+    width: 50%;
+    color: red;
+    display: flex;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 600px;
+}
